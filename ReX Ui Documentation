@@ -1,0 +1,72 @@
+if game.CoreGui:FindFirstChild("ReX Ui Library") then
+    game.CoreGui["ReX Ui Library"]:Destroy() 
+end
+
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/BlueDuck-jpg/UiLibrary/main/ReXUiLibrary"))()
+local window = library:Window("ReX Ui Library", Enum.KeyCode.Equals)
+local tab = window:Tab("Tab")
+local e = window:Tab("Tab 2")
+
+tab:Button("Button", function()
+    print("Clicked")
+end)
+
+tab:Button("Hi", function()
+    print("Hi")
+end)
+
+tab:Toggle("Toggle", function(t)
+    print(t)
+end)
+
+tab:Slider("Slider",0,10,0, function(t)
+    print(t)
+end)
+
+tab:Dropdown("Dropdown", {"1", "2", "3", "4"}, function(t)
+    print(t) 
+end)
+
+tab:Textbox("Textbox", "Textbox", true, function(t)
+    print(t) 
+end)
+
+tab:Label("ReX UI Library", false)
+
+tab:Bind("KeyBind", Enum.KeyCode.E, function()
+    print("KeyBind Clicked")
+end)
+
+tab:DestroyGui()
+
+e:Button("Button", function()
+    print("Clicked")
+end)
+
+e:Button("Hi", function()
+    print("Hi")
+end)
+
+e:Toggle("Toggle", function(t)
+    print(t)
+end)
+
+e:Slider("Slider",0,10,0, function(t)
+    print(t)
+end)
+
+e:Dropdown("Dropdown", {"1", "2", "3"}, function(t)
+    print(t) 
+end)
+
+e:Textbox("Textbox", "Textbox", true, function(t)
+    print(t) 
+end)
+
+e:Label("ReX UI Library", false)
+
+e:Bind("KeyBind", Enum.KeyCode.E, function()
+    print("KeyBind Clicked")
+end)
+
+e:DestroyGui()
