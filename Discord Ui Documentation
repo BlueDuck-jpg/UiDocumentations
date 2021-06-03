@@ -1,0 +1,56 @@
+local library = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+local window = library:Window("Discord UI Lib")
+local server = window:Server("Server", "") -- Main is the title, "" <-- Put image id githubusercontent
+local main = server:Channel("Main")
+
+function createNotification(Title, Text, Duration)
+    game.StarterGui:SetCore("SendNotification", {
+        Title = Title,
+        Text = Text,
+        Duration = Duration
+    }) 
+end
+
+main:Button("Button", function()
+    print("Clicked button") 
+end)
+
+main:Toggle("Toggle", false, function(t)
+    print(t) 
+end)
+
+local Slider = main:Slider("Slider", 0, 100, 50, function(t)
+    print(t) 
+end)
+
+main:Button("Change Slider To 100", function()
+    Slider:Change(100)
+end)
+
+local Dropdown = main:Dropdown("Dropdown",{"Option 1","Option 2","Option 3","Option 4","Option 5"}, function(bool)
+    print(bool)
+end)
+
+main:Button("Clear Dropdown", function()
+	Dropdown:Clear()
+end)
+
+main:Button("Add Option", function()
+	Dropdown:Add("Option")
+end)
+
+main:Colorpicker("ColorPicker", Color3.fromRGB(255,1,1), function(t)
+	print(t)
+end)
+
+main:Textbox("TextBox", "Type here!", true, function(t) -- true is disappear
+	print(t)
+end)
+
+main:Label("Text Label")
+
+main:Bind("Bind", Enum.KeyCode.E, function()
+	print("Binded")
+end)
+
+window:Server("Story Telling", "http://www.roblox.com/asset/?id=6031075938")
